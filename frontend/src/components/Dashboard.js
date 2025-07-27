@@ -34,15 +34,19 @@ const Dashboard = () => {
   }, []);
 
   const fetchBusinesses = async () => {
-    try {
-      const response = await axios.get('/api/businesses');
-      setBusinesses(response.data);
-    } catch (err) {
-      setError('Failed to fetch businesses');
-    } finally {
-      setLoading(false);
-    }
-  };
+  try {
+    const response = await axios.get('/api/businesses');
+
+    // 👉 Defensive check
+    const data = Array.isArray(response.data) ? response.data : [];
+    setBusinesses(data);
+  } catch (err) {
+    setError('Failed to fetch businesses');
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   const handleCreateBusiness = () => {
     navigate('/business/new');

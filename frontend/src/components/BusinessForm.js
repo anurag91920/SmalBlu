@@ -164,16 +164,18 @@ const BusinessForm = () => {
            fullWidth
            required
            SelectProps={{
-              native: true,
-         }}
-        >
-         <option value=""></option>
-         <option value="IT">Retail</option>
-         <option value="Finance">Service</option>
-         <option value="Retail">Technology</option>
-         <option value="Education">Manufacturing</option>
-         <option value="Health">Health</option>
-       </TextField>
+           native: true,
+           }}
+           margin="normal"
+         >
+          <option value=""></option>
+          <option value="Retail">Retail</option>
+          <option value="Service">Service</option>
+          <option value="Technology">Technology</option>
+          <option value="Manufacturing">Manufacturing</option>
+          <option value="Health">Health</option>
+        </TextField>
+
 
 
           <Button
