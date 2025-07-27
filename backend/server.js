@@ -21,7 +21,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/business', businessRoutes);
 
 // MongoDB connection
-mongoose.connect(process.env.MONGODB_URL || 'mongodb://127.0.0.1:27017/business-profile', {
+mongoose.connect(process.env.MONGO_URL || 'mongodb://127.0.0.1:27017/business-profile', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
