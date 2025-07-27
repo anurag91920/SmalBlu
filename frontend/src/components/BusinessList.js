@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+
+
 import {
   Container,
   Typography,
@@ -17,7 +19,8 @@ import {
 } from '@mui/material';
 import { Edit, Delete } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import axios from '../axiosInstance';
+
 
 const BusinessList = () => {
   const [business, setBusiness] = useState([]);

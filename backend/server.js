@@ -7,8 +7,13 @@ const businessRoutes = require('./routes/business');
 
 const app = express();
 
+
+
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: process.env.CLIENT_URL, // Vercel frontend URL from .env
+  credentials: true
+}));
 app.use(express.json());
 
 // Routes
