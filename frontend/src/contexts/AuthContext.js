@@ -28,20 +28,22 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const verifyToken = async () => {
-    try {
-      const response = await axios.get('/api/auth/verify');
-      setUser(response.data.user);
-    } catch (error) {
-      localStorage.removeItem('token');
-      delete axios.defaults.headers.common['Authorization'];
-    } finally {
-      setLoading(false);
-    }
-  };
+  try {
+    const response = await axios.get('https://smalblu-backend-icno.onrender.com/api/auth/verify'); //  Absolute URL
+    setUser(response.data.user);
+  } catch (error) {
+    localStorage.removeItem('token');
+    delete axios.defaults.headers.common['Authorization'];
+    setUser(null);
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   const login = async (email, password) => {
     try {
-      const response = await axios.post('/api/auth/login', { email, password });
+      const response = await axios.post('https://smalblu-backend-icno.onrender.com/api/auth/login', { email, password });
       const { token, user } = response.data;
       
       localStorage.setItem('token', token);
@@ -56,8 +58,8 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (name, email, password) => {
   try {
-    const response = await axios.post('/api/auth/register', {
-      businessName: name, // ✅ backend को सही key भेजी गई
+    const response = await axios.post('https://smalblu-backend-icno.onrender.com/api/auth/register', {
+      businessName: name, // backend को सही key भेजी गई
       email,
       password
     });

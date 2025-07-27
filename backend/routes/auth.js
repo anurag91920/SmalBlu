@@ -3,7 +3,7 @@ const router = express.Router();
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
-// 🔐 Middleware for token verification
+// Middleware for token verification
 const authMiddleware = (req, res, next) => {
   const authHeader = req.header('Authorization');
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
@@ -21,7 +21,7 @@ const authMiddleware = (req, res, next) => {
   }
 };
 
-// ✅ Register route
+//  Register route
 router.post('/register', async (req, res) => {
   try {
     const { email, password, businessName } = req.body;
@@ -52,7 +52,7 @@ router.post('/register', async (req, res) => {
   }
 });
 
-// ✅ Login route
+//  Login route
 router.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -85,7 +85,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// ✅ Token verify route
+// Token verify route
 router.get('/verify', authMiddleware, async (req, res) => {
   try {
     const user = await User.findById(req.userId).select('-password');
