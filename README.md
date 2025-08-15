@@ -37,5 +37,21 @@
 
 ---
 
-## 📁 Project Structure
+## 🔮 Future Enhancements
+
+🌍 Public profile URLs for each business
+
+📂 Upload logos/images for business profiles
+
+🧾 Business analytics dashboard
+
+✉️ Contact form for direct inquiries
+
+📱 Mobile app integration (React Native)
+
+🧑 Author
+
+Anurag Chaurasiya
+📧 Email: anurag9120959628@gmail.com
+🌐 Portfolio: https://port-folio-one-red.vercel.app
 
