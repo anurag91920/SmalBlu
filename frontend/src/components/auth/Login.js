@@ -74,6 +74,16 @@ const Login = () => {
             >
               Sign In
             </Button>
+            <Typography align="center" sx={{ mt: 2 }}>
+                Don't have an account?{" "}
+              <span
+                     style={{ color: "#1976d2", cursor: "pointer", fontWeight: "bold" }}
+             onClick={() => navigate('/register')}
+               >
+                Register
+               </span>
+              </Typography>
+
           </Box>
         </Paper>
       </Container>
